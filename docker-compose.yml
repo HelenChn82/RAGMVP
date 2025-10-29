@@ -1,0 +1,13 @@
+version: "3.9"
+services:
+  ragflow:
+    build: .
+    image: ragflow-min:latest
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - "8000:8000"
+    volumes:
+      - rag_data:/data/chroma
+volumes:
+  rag_data:
